@@ -13,3 +13,4 @@ PROJECT=$(basename $1)
 git clone --bare $URL $PROJECT
 
 echo ${PROJECT} >> /home/git/projects.list
+echo $URL > /home/git/$PROJECT/description
