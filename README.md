@@ -35,7 +35,7 @@ git clone --bare https://github.com/Tianxiaomo/pytorch-YOLOv4 pytorch-YOLOv4.git
 
 ## Create a new project on Git server
 
-STEP#1 (gh repo create)
+STEP#1 (git-repo-create.sh)
 ```
 $ mkdir /home/git/${PROJECT}.git
 $ cd /home/git/${PROJECT}.git
