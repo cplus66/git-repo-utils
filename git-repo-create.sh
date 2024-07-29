@@ -1,4 +1,4 @@
-#!/bin/bash -xe
+#!/bin/bash -e
 
 if [ x$1 == "x" ]; then
   echo "Usage: $0 <project_name> [descriptio]"
@@ -17,10 +17,12 @@ mkdir /home/git/${PROJECT}.git
 cd /home/git/${PROJECT}.git
 git init --bare
 
-chown -R git.git /home/git/${PROJECT}.git
+chown -R git:git /home/git/${PROJECT}.git
 
 echo ${PROJECT}.git >> /home/git/projects.list
 
 if [ "x$2" != "x" ]; then
   echo $2 > /home/git/${PROJECT}.git/description
+else
+  echo $1 > /home/git/${PROJECT}.git/description
 fi
