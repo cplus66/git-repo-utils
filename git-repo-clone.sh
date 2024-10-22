@@ -1,4 +1,6 @@
 #!/bin/bash -xe
+# eval "$(ssh-agent -s)"
+# ssh-add ~/.ssh/bit
 
 if [ x$1 == "x" ]; then
   echo "Usage: $0 <git_url>"
