@@ -8,10 +8,11 @@ if [ x$1 == "x" ]; then
   exit 0
 fi
 
-# git clone --bare https://github.com/Tianxiaomo/pytorch-YOLOv4 pytorch-YOLOv4.git
 URL=$1
 PROJECT=$(basename $1)
+GIT_HOME=/home/git
 
+cd $GIT_HOME
 git clone --bare $URL $PROJECT
 
 echo ${PROJECT} >> /home/git/projects.list
