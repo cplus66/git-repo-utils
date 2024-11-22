@@ -3,9 +3,7 @@ documents
 estrada_tests
 framework_bvc
 framework_carlo
-framework_image_work
 framework_ria
-framework_shyam
 image_base_nvidia_jetpack_5.0
 initrd_boot_menu
 jetpack_4.3_nano_usb_rootfs
