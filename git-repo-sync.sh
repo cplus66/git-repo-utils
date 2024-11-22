@@ -3,8 +3,9 @@
 GIT_DIR=/home/git
 LOG=${GIT_DIR}/log/git_sync_$(date +%F).log
 
-cd $GIT_DIR
+date | tee -a $LOG
 
+cd $GIT_DIR
 for i in $(cat projects.list); do
   echo $i | tee -a $LOG
   cd $i
