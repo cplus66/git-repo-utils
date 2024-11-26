@@ -13,7 +13,7 @@ PROJECT=$(basename $1)
 GIT_HOME=/home/git
 
 cd $GIT_HOME
-git clone --bare $URL $PROJECT
+git clone --bare --mirror $URL $PROJECT
 
 echo ${PROJECT} >> /home/git/projects.list
 echo $URL > /home/git/$PROJECT/description
