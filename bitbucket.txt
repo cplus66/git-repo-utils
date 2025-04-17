@@ -274,7 +274,6 @@ mic_713_jetpack_5.1
 mic_713_jetpack_5.1.1
 mic_713_jetpack_5.1.1_ea1
 mic_713_jetpack_5.1.2
-mic_713_jetpack_5.1.4
 mic_713_jetpack_6.0.0
 mic_711on_jetpack_6.2.0
 mic_712_jetpack_6.2.0
