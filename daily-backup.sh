@@ -3,7 +3,7 @@
 GIT_HOME=/home/git
 
 # List changed project list
-LIST=$(cat bitbucket.txt)
+LIST=$(cat data/bitbucket.txt)
 
 # Clone if the repositories doesn't exist.
 cd $GIT_HOME

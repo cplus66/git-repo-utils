@@ -1,6 +1,6 @@
 #!/bin/bash -xe
 
-LIST=$(cat bitbucket.txt)
+LIST=$(cat data/bitbucket.txt)
 
 for i in $LIST; do
   REP=$(echo $i | sed 's/\r$//g')
