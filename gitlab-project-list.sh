@@ -7,6 +7,9 @@ PROJECT_LIST=$GIT_BACKUP_HOME/data/gitlab.txt
 
 rm -f $PROJECT_LIST
 
+# fix for sh: fork: retry: Resource temporarily unavailable
+ulimit -Sn unlimited && ulimit -Sl unlimited
+
 for ((i=0;;i++)); do
   curl --insecure https://172.17.4.45/api/v4/projects?private_token=${GITLAB_KEY}\&per_page=100\&page=$i -o $TMP_JSON
 
