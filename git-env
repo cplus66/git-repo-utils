@@ -1,4 +1,8 @@
+export SSH_AUTH_SOCK=~/.ssh/ssh-agent.sock
 
-eval $(ssh-agent -s)
+ssh-add -l > /dev/null 2>&1
+
+[ $? -ge 2 ] && ssh-agent -a $SSH_AUTH_SOCK 
+
 ssh-add ~/.ssh/git
 ssh-add ~/.ssh/bit
