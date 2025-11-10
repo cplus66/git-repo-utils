@@ -4,5 +4,5 @@ ssh-add -l > /dev/null 2>&1
 
 [ $? -ge 2 ] && ssh-agent -a $SSH_AUTH_SOCK 
 
-ssh-add ~/.ssh/git
-ssh-add ~/.ssh/bit
+ssh-add ~/.ssh/id_rsa_github
+ssh-add ~/.ssh/id_rsa_bitbucket
