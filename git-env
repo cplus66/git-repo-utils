@@ -2,7 +2,14 @@ export SSH_AUTH_SOCK=~/.ssh/ssh-agent.sock
 
 ssh-add -l > /dev/null 2>&1
 
+# 2 means "Error connecting to agent: Connection refused"
 [ $? -ge 2 ] && ssh-agent -a $SSH_AUTH_SOCK 
 
-ssh-add ~/.ssh/id_rsa_github
-ssh-add ~/.ssh/id_rsa_bitbucket
+CERT=(~/.ssh/id_rsa_github ~/.ssh/id_rsa_bitbucket)
+COUNT=$(ssh-add -l | wc | awk '{print $1}')
+
+if [ $COUNT -ne ${#CERT[@]}  ]; then
+  for ((i=0; i< ${#CERT[@]}; i++)); do
+    ssh-add ${CERT[i]}
+  done
+fi
