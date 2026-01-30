@@ -4,7 +4,7 @@ GIT_HOME=/home/gitlab
 GITLAB_BACKUP_PRJ_HOME=$(dirname $0)
 PRJ_LIST=$GITLAB_BACKUP_PRJ_HOME/data/gitlab.txt
 
-# Retrieve the project list
+# Retrieve the project list to $PRJ_LIST or data/gitlab.txt
 $GITLAB_BACKUP_PRJ_HOME/gitlab-project-list.sh
 
 # List changed project list
