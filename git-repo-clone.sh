@@ -1,4 +1,4 @@
-#!/bin/bash -xe
+#!/bin/bash -e
 # eval "$(ssh-agent -s)"
 # ssh-add ~/.ssh/bit
 
