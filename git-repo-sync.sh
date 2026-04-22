@@ -4,6 +4,8 @@ GIT_DIR=/home/git
 LOG=${GIT_DIR}/log/git_sync_$(date +%F).log
 
 date | tee -a $LOG
+
+# use GitHub CxxxxSxxx account.
 source /home/git/git-repo-utils/bitbucket-env
 
 cd $GIT_DIR
