@@ -5,6 +5,8 @@ ssh-add -l > /dev/null 2>&1
 # 2: means "Error connecting to agent: Connection refused"
 [ $? -ge 2 ] && ssh-agent -a $SSH_AUTH_SOCK 
 
+ssh-add -d ~/.ssh/id_rsa_github || true
+
 CERT=(~/.ssh/id_rsa_bitbucket)
 COUNT=$(ssh-add -l | wc | awk '{print $1}')
 
