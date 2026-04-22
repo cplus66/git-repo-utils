@@ -4,7 +4,7 @@ GIT_DIR=/home/git
 LOG=${GIT_DIR}/log/git_sync_$(date +%F).log
 
 date | tee -a $LOG
-source /home/git/git-repo-utils/git-env
+source /home/git/git-repo-utils/bitbucket-env
 
 cd $GIT_DIR
 for i in $(cat projects.list); do
