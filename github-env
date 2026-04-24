@@ -1,4 +1,4 @@
-export SSH_AUTH_SOCK=~/.ssh/ssh-agent.sock
+export SSH_AUTH_SOCK=/tmp/${UID}_ssh-agent.sock
 CERT=(~/.ssh/id_rsa_github)
 
 ssh-add -l > /dev/null 2>&1
