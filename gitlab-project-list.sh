@@ -21,5 +21,5 @@ for ((i=0;;i++)); do
   fi
 done
 
-sed -e 's/\"//g' $PROJECT_LIST | grep isystem-esg-linux-bsp | sort | cut -c 23- | tee ${PROJECT_LIST}.sort
+sed -e 's/\"//g' $PROJECT_LIST | grep isystem-esg-linux-bsp | sort | cut -c 23- | uniq | tee ${PROJECT_LIST}.sort
 mv ${PROJECT_LIST}.sort $PROJECT_LIST
