@@ -1,6 +1,7 @@
 #!/bin/bash
 /usr/bin/docker run \
 	-d \
+	--restart unless-stopped \
 	--name repoweb \
 	-e PROJECTROOT=/var/lib/git \
 	-e PROJECTS_LIST=/var/lib/git/projects.list \

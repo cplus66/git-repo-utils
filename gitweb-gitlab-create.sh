@@ -1,5 +1,6 @@
 /usr/bin/docker run \
 	-d \
+        --restart unless-stopped \
 	--name repoweb-gitlab \
 	-e PROJECTROOT=/var/lib/git \
 	-e PROJECTS_LIST=/var/lib/git/projects.list \
