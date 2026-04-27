@@ -7,5 +7,8 @@
 	-v /home/gitlab:/var/lib/git:ro \
 	-v /etc/localtime:/etc/localtime:ro \
 	-p 0.0.0.0:8082:80 \
+	--health-cmd="nginx -t &>/dev/null && wget -q -O - 127.0.0.1:80 &>/dev/null || exit 1" \
+	--health-interval=30s \
+	--health-timeout=5s \
 	mlan/gitweb
 
