@@ -4,7 +4,7 @@
 
 if [ x$1 == "x" ]; then
   echo "Usage: $0 <git_url>"
-  echo "ex: $0 https://github.com/Tianxiaomo/pytorch-YOLOv4 pytorch-YOLOv4.git"
+  echo "ex: $0 https://github.com/Tianxiaomo/pytorch-YOLOv4"
   exit 0
 fi
 
@@ -13,7 +13,7 @@ PROJECT=$(basename $1)
 GIT_HOME=/home/git
 
 cd $GIT_HOME
-git clone --bare --mirror $URL $PROJECT
+git clone --recursive --bare --mirror $URL $PROJECT
 
 echo ${PROJECT} >> /home/git/projects.list
 echo $URL > /home/git/$PROJECT/description
