@@ -4,6 +4,7 @@ GIT_BACKUP_HOME=$(dirname $0)
 GITLAB_KEY=$(cat ~/.ssh/gitlab-api-key)
 TMP_JSON=$GIT_BACKUP_HOME/data/projects.json
 PROJECT_LIST=$GIT_BACKUP_HOME/data/gitlab.txt
+PROJECT_LIST_PUBLIC=$GIT_BACKUP_HOME/data/gitlab_public.txt
 
 rm -f $PROJECT_LIST
 
@@ -22,4 +23,7 @@ for ((i=0;;i++)); do
 done
 
 sed -e 's/\"//g' $PROJECT_LIST | grep isystem-esg-linux-bsp | sort | cut -c 23- | uniq | tee ${PROJECT_LIST}.sort
+sed -e 's/\"//g' $PROJECT_LIST | grep isystem-public | sort | cut -c 16- | uniq | tee ${PROJECT_LIST_PUBLIC}.sort
+
 mv ${PROJECT_LIST}.sort $PROJECT_LIST
+mv ${PROJECT_LIST_PUBLIC}.sort $PROJECT_LIST_PUBLIC
